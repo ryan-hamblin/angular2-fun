@@ -11,7 +11,7 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
     var core_1;
-    var AppComponent;
+    var AppComponent, Heroes;
     return {
         setters:[
             function (core_1_1) {
@@ -20,17 +20,38 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.title = "Tour of Heroes";
+                    this.hero = {
+                        id: 1,
+                        name: 'Windstorm'
+                    };
+                    this.heroes = Heroes;
                 }
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: '<h1>My First Angular 2 App</h1>'
+                        template: "<h1>{{title}}</h1>\n    \t\t\t\t\t <h2>My Heroes</h2>\n    \t\t\t\t\t <ul class=\"heroes\">\n\t    \t\t\t\t\t \t<li *ngFor=\"#hero of heroes\">\n\t    \t\t\t\t\t \t\t<span class=\"badge\">{{hero.id}}</span>{{hero.name}}\n\t    \t\t\t\t\t \t</li>\n    \t\t\t\t\t </ul>\n    \t\t\t\t\t <h2>{{hero.name}}'s details!</h2>\n    \t\t\t\t\t <div><label>id: </label>{{hero.id}}</div>\n    \t\t\t\t\t <div>\n\t    \t\t\t\t\t \t<label>name: </label>\n\t    \t\t\t\t\t \t<div><input [(ngModel)]=\"hero.name\" placeholder=\"name\"></div>\n    \t\t\t\t\t </div>\n    \t\t\t\t\t ",
+                        styles: [
+                            ".selected {\n\t\t\t\t\t\t    background-color: #CFD8DC !important;\n\t\t\t\t\t\t    color: white;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes {\n\t\t\t\t\t\t    margin: 0 0 2em 0;\n\t\t\t\t\t\t    list-style-type: none;\n\t\t\t\t\t\t    padding: 0;\n\t\t\t\t\t\t    width: 10em;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes li {\n\t\t\t\t\t\t    cursor: pointer;\n\t\t\t\t\t\t    position: relative;\n\t\t\t\t\t\t    left: 0;\n\t\t\t\t\t\t    background-color: #EEE;\n\t\t\t\t\t\t    margin: .5em;\n\t\t\t\t\t\t    padding: .3em 0;\n\t\t\t\t\t\t    height: 1.6em;\n\t\t\t\t\t\t    border-radius: 4px;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes li.selected:hover {\n\t\t\t\t\t\t    background-color: #BBD8DC !important;\n\t\t\t\t\t\t    color: white;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes li:hover {\n\t\t\t\t\t\t    color: #607D8B;\n\t\t\t\t\t\t    background-color: #DDD;\n\t\t\t\t\t\t    left: .1em;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes .text {\n\t\t\t\t\t\t    position: relative;\n\t\t\t\t\t\t    top: -3px;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes .badge {\n\t\t\t\t\t\t    display: inline-block;\n\t\t\t\t\t\t    font-size: small;\n\t\t\t\t\t\t    color: white;\n\t\t\t\t\t\t    padding: 0.8em 0.7em 0 0.7em;\n\t\t\t\t\t\t    background-color: #607D8B;\n\t\t\t\t\t\t    line-height: 1em;\n\t\t\t\t\t\t    position: relative;\n\t\t\t\t\t\t    left: -1px;\n\t\t\t\t\t\t    top: -4px;\n\t\t\t\t\t\t    height: 1.8em;\n\t\t\t\t\t\t    margin-right: .8em;\n\t\t\t\t\t\t    border-radius: 4px 0 0 4px;\n\t\t\t\t\t\t  }"
+                        ]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
                 return AppComponent;
             }());
             exports_1("AppComponent", AppComponent);
+            Heroes = [
+                { "id": 11, "name": "Mr. Nice" },
+                { "id": 12, "name": "Narco" },
+                { "id": 13, "name": "Bombasto" },
+                { "id": 14, "name": "Celeritas" },
+                { "id": 15, "name": "Magneta" },
+                { "id": 16, "name": "RubberMan" },
+                { "id": 17, "name": "Dynama" },
+                { "id": 18, "name": "Dr IQ" },
+                { "id": 19, "name": "Magma" },
+                { "id": 20, "name": "Tornado" }
+            ];
         }
     }
 });
