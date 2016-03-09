@@ -21,16 +21,14 @@ System.register(['angular2/core'], function(exports_1, context_1) {
             AppComponent = (function () {
                 function AppComponent() {
                     this.title = "Tour of Heroes";
-                    this.hero = {
-                        id: 1,
-                        name: 'Windstorm'
-                    };
                     this.heroes = Heroes;
                 }
+                AppComponent.prototype.onSelect = function (hero) { this.selectedHero = hero; };
+                ;
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "<h1>{{title}}</h1>\n    \t\t\t\t\t <h2>My Heroes</h2>\n    \t\t\t\t\t <ul class=\"heroes\">\n\t    \t\t\t\t\t \t<li *ngFor=\"#hero of heroes\">\n\t    \t\t\t\t\t \t\t<span class=\"badge\">{{hero.id}}</span>{{hero.name}}\n\t    \t\t\t\t\t \t</li>\n    \t\t\t\t\t </ul>\n    \t\t\t\t\t <h2>{{hero.name}}'s details!</h2>\n    \t\t\t\t\t <div><label>id: </label>{{hero.id}}</div>\n    \t\t\t\t\t <div>\n\t    \t\t\t\t\t \t<label>name: </label>\n\t    \t\t\t\t\t \t<div><input [(ngModel)]=\"hero.name\" placeholder=\"name\"></div>\n    \t\t\t\t\t </div>\n    \t\t\t\t\t ",
+                        template: "<h1>{{title}}</h1>\n    \t\t\t\t\t <h2>My Heroes</h2>\n    \t\t\t\t\t <ul class=\"heroes\">\n\t    \t\t\t\t\t \t<li *ngFor=\"#hero of heroes\"\n\t    \t\t\t\t\t \t\t\t[class.selected]=\"hero === selectedHero\" \n\t    \t\t\t\t\t \t\t\t(click)=\"onSelect(hero)\">\n\t    \t\t\t\t\t \t\t<span class=\"badge\">{{hero.id}}</span>{{hero.name}}\n\t    \t\t\t\t\t \t</li>\n    \t\t\t\t\t </ul>\n    \t\t\t\t\t <div *ngIf=\"selectedHero\">\n\t    \t\t\t\t\t <h2>{{selectedHero.name}}'s details!</h2>\n\t    \t\t\t\t\t <div><label>id: </label>{{selectedHero.id}}</div>\n\t    \t\t\t\t\t <div>\n\t\t    \t\t\t\t\t \t<label>name: </label>\n\t\t    \t\t\t\t\t \t<div><input [(ngModel)]=\"selectedHero.name\" placeholder=\"name\"></div>\n\t    \t\t\t\t\t </div>\n\t    \t\t\t\t </div>\n    \t\t\t\t\t ",
                         styles: [
                             ".selected {\n\t\t\t\t\t\t    background-color: #CFD8DC !important;\n\t\t\t\t\t\t    color: white;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes {\n\t\t\t\t\t\t    margin: 0 0 2em 0;\n\t\t\t\t\t\t    list-style-type: none;\n\t\t\t\t\t\t    padding: 0;\n\t\t\t\t\t\t    width: 10em;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes li {\n\t\t\t\t\t\t    cursor: pointer;\n\t\t\t\t\t\t    position: relative;\n\t\t\t\t\t\t    left: 0;\n\t\t\t\t\t\t    background-color: #EEE;\n\t\t\t\t\t\t    margin: .5em;\n\t\t\t\t\t\t    padding: .3em 0;\n\t\t\t\t\t\t    height: 1.6em;\n\t\t\t\t\t\t    border-radius: 4px;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes li.selected:hover {\n\t\t\t\t\t\t    background-color: #BBD8DC !important;\n\t\t\t\t\t\t    color: white;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes li:hover {\n\t\t\t\t\t\t    color: #607D8B;\n\t\t\t\t\t\t    background-color: #DDD;\n\t\t\t\t\t\t    left: .1em;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes .text {\n\t\t\t\t\t\t    position: relative;\n\t\t\t\t\t\t    top: -3px;\n\t\t\t\t\t\t  }\n\t\t\t\t\t\t  .heroes .badge {\n\t\t\t\t\t\t    display: inline-block;\n\t\t\t\t\t\t    font-size: small;\n\t\t\t\t\t\t    color: white;\n\t\t\t\t\t\t    padding: 0.8em 0.7em 0 0.7em;\n\t\t\t\t\t\t    background-color: #607D8B;\n\t\t\t\t\t\t    line-height: 1em;\n\t\t\t\t\t\t    position: relative;\n\t\t\t\t\t\t    left: -1px;\n\t\t\t\t\t\t    top: -4px;\n\t\t\t\t\t\t    height: 1.8em;\n\t\t\t\t\t\t    margin-right: .8em;\n\t\t\t\t\t\t    border-radius: 4px 0 0 4px;\n\t\t\t\t\t\t  }"
                         ]
